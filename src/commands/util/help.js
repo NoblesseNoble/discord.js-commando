@@ -53,7 +53,7 @@ module.exports = class HelpCommand extends Command {
 
 				const messages = [];
 				try {
-					messages.push(await msg.reply(help));
+					await msg.reply(help);
 					//if(msg.channel.type !== 'dm') messages.push(await msg.reply('Sent you a DM with information.'));
 				} catch(err) {
 					messages.push(await msg.reply('kkk.'));
@@ -97,7 +97,7 @@ module.exports = class HelpCommand extends Command {
 				`, { split: true }));
 				//if(msg.channel.type !== 'dm') messages.push(await msg.reply('Sent you a DM with information.'));
 			} catch(err) {
-				messages.push(await msg.reply('k'));
+				await msg.reply('k');
 			}
 			return messages;
 		}
