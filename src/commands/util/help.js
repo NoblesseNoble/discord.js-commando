@@ -56,7 +56,7 @@ module.exports = class HelpCommand extends Command {
 					messages.push(await msg.reply(help));
 					//if(msg.channel.type !== 'dm') messages.push(await msg.reply('Sent you a DM with information.'));
 				} catch(err) {
-					messages.push(await msg.reply('Unable to send you the help DM. You probably have DMs disabled.'));
+					messages.push(await msg.reply('kkk.'));
 				}
 				return messages;
 			} else if(commands.length > 15) {
@@ -73,7 +73,7 @@ module.exports = class HelpCommand extends Command {
 		} else {
 			const messages = [];
 			try {
-				messages.push(await msg.direct(stripIndents`
+				messages.push(await msg.reply(stripIndents`
 					${oneLine`
 						To run a command in ${msg.guild || 'any server'},
 						use ${Command.usage('command', msg.guild ? msg.guild.commandPrefix : null, this.client.user)}.
@@ -95,9 +95,9 @@ module.exports = class HelpCommand extends Command {
 						`).join('\n\n')
 					}
 				`, { split: true }));
-				if(msg.channel.type !== 'dm') messages.push(await msg.reply('Sent you a DM with information.'));
+				//if(msg.channel.type !== 'dm') messages.push(await msg.reply('Sent you a DM with information.'));
 			} catch(err) {
-				messages.push(await msg.reply('Unable to send you the help DM. You probably have DMs disabled.'));
+				messages.push(await msg.reply('k'));
 			}
 			return messages;
 		}
